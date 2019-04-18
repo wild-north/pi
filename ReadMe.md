@@ -1,5 +1,7 @@
 to set up the WIFI internet using 802.1x you can do the following:
+
 1 - add section into /etc/wpa_supplicant/wpa_supplicant.conf
+
 ========================================================
 network={
     ssid="XXXX8021x"
@@ -11,6 +13,7 @@ network={
     identity="serhii_strizhak@XXXX.com"
     password=hash:<your_encrypted_password>
 }
+
 ========================================================
 2 - in file /etc/network/interfaces, add following:
 
@@ -24,4 +27,5 @@ iface wlan0 inet dhcp
 to encrypt your password, use this commands:
 
 echo -n <password> | iconv -t utf16le | openssl md4
+
 ========================================================
